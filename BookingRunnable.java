@@ -10,21 +10,32 @@ public class BookingRunnable implements Runnable {
     @Override
     public void run() {
         synchronized (this) {
-            
-            IBookingTickets iBookingTickets = new BookingTickets();
-
-            for (int i = 0; i < 300; i++) {
+            while (true) {
+                IBookingTickets iBookingTickets = new BookingTickets();
                 RandomTickets randomTickets = new RandomTickets();
                 BaseTicket baseTicket = new BaseTicket();
+                TicketsPackage ticketsPackage = new TicketsPackage();
                 randomTickets.randomTicket(baseTicket);
                 if (iBookingTickets.checkTickets(baseTicket.getName(),
                         baseTicket.getSession(), baseTicket)) {
-                    iBookingTickets.BookingNormalTickets(baseTicket.getName(), baseTicket.getSession(), baseTicket);
+
+                    switch (baseTicket.getBookingType()) {
+                        case 0:
+                            iBookingTickets.BookingNormalTickets(baseTicket.getName(), baseTicket.getSession(),
+                                    baseTicket);
+                            break;
+                        case 1:
+                            // System.out.println("Test1");
+                            // iBookingTickets.BookingTicketsPackage(ticketsPackage.getTicketsPackageName(),ticketsPackage);
+                            break;
+                    }
+
                 } else
                     break;
-            }
-        }
 
+            }
+
+        }
     }
 
 }

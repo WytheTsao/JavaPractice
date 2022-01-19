@@ -1,9 +1,9 @@
+import java.net.CacheRequest;
+
 public class BookingTickets implements IBookingTickets {
 
     @Override
     public boolean checkTickets(String movieName, String movieSession, BaseTicket baseTicket) {
-        
-    
         try {
             Thread.sleep(100);
         } catch (InterruptedException e) {
@@ -20,7 +20,6 @@ public class BookingTickets implements IBookingTickets {
                     System.out.println("電影名稱: " + movieName + " 電影影廳: " + movieSession + " 剩餘票數:"
                             + MovieEnum.values()[i].getQuantity());
                 }
-
             }
         }
         return true;
@@ -30,7 +29,6 @@ public class BookingTickets implements IBookingTickets {
     public int BookingNormalTickets(String movieName, String movieSession, BaseTicket baseTicket) {
         int sum = 0;
 
-    
         for (int i = 0; i < MovieEnum.values().length; i++) {
             if (MovieEnum.values()[i].getName().equals(movieName)
                     && MovieEnum.values()[i].getSession().equals(movieSession)) {
@@ -43,6 +41,18 @@ public class BookingTickets implements IBookingTickets {
             }
         }
         return sum;
+    }
+
+    @Override
+    public int BookingTicketsPackage(String ticketsPackageName, TicketsPackage ticketsPackage) {
+        // 012 -> 套餐
+        System.out.println(ticketsPackageName);
+        // if(ticketsPackageName.equals("蜘蛛人A")&&ticketsPackageName.equals("蜘蛛人B")){
+        //     System.out.println(ticketsPackageName);
+        // }
+       
+
+        return 0;
     }
 
 }

@@ -12,17 +12,20 @@ public enum MovieEnum {
         this.ticketQuantity = ticketQuantity;
     }
 
-    public String getName(){
+    public String getName() {
         return this.movieName;
     }
-    public String getSession(){
+
+    public String getSession() {
         return this.movieSession;
     }
-    public int getQuantity(){
+
+    public int getQuantity() {
         return this.ticketQuantity;
     }
-    public void setTickets(int ticketQuantity){
+
+    public void setTickets(int ticketQuantity) {
         this.ticketQuantity = ticketQuantity;
     }
-    
+
 }

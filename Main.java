@@ -1,8 +1,6 @@
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println(MovieEnum.values().length);
-
         BookingRunnable bookingRunnable = new BookingRunnable();
         
         Thread thread1 = new Thread(bookingRunnable);
@@ -14,4 +12,4 @@ public class Main {
         thread3.start();
       
     }
-}
+}   

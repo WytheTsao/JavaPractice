@@ -4,6 +4,7 @@ public class BaseTicket {
 
     private String movieName, movieSession;
     private ArrayList<Integer> tickets;
+    private int bookingType;
 
     public void setName(String name) {
         this.movieName = name;
@@ -27,6 +28,14 @@ public class BaseTicket {
 
     public ArrayList<Integer> getTickets() {
         return this.tickets;
+    }
+
+    public void setBookingType(int bookingType) {
+        this.bookingType = bookingType;
+    }
+
+    public int getBookingType() {
+        return this.bookingType;
     }
 
 }
