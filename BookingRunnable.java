@@ -26,7 +26,7 @@ public class BookingRunnable implements Runnable {
                             break;
                         case 1:
                             // System.out.println("Test1");
-                            // iBookingTickets.BookingTicketsPackage(ticketsPackage.getTicketsPackageName(),ticketsPackage);
+                            iBookingTickets.BookingTicketsPackage("123213",ticketsPackage);
                             break;
                     }
 

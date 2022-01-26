@@ -6,6 +6,7 @@ public class RandomTickets {
     ArrayList<Integer> ticketQuantityList = new ArrayList<>();
     // ArrayList<Integer> ticketsPackageType = new ArrayList<>();
     int ticketType, bookingType;
+    TicketsPackage ticketsPackage = new TicketsPackage();
 
 
     public BaseTicket randomTicket(BaseTicket tickets) {
@@ -45,27 +46,25 @@ public class RandomTickets {
         return tickets;
     }
 
-    public HashMap<String, String> randomTicketsPackage() {
-        TicketsPackage ticketsPackage = new TicketsPackage();
+    public TicketsPackage randomTicketsPackage() {
         int ticketsPackageType;
         ticketsPackageType = (int) (Math.random() * 3);
-        HashMap<String, String> ticketPackage = new HashMap<String, String>();
-
+        
         // ticketsPackage.setTicketsPackageName((int) (Math.random() * 3));
         switch (ticketsPackageType) {
             case 0:
                 ticketsPackage.setTicketsPackageName("蜘蛛人A");
-                ticketPackage.put("蜘蛛人A", "影廳A");
+                ticketsPackage.setTicketsPackageSession("影廳A");
                 break;
             case 1:
                 ticketsPackage.setTicketsPackageName("蜘蛛人B");
-                ticketPackage.put("蜘蛛人B", "影廳B");
+                ticketsPackage.setTicketsPackageSession("影廳B");
                 break;
             case 2:
-                ticketsPackage.setTicketsPackageName("駭客A");
-                ticketPackage.put("駭客A", "影廳C");
+                ticketsPackage.setTicketsPackageName("駭客任務");
+                ticketsPackage.setTicketsPackageSession("影廳C");
                 break;
         }
-        return ticketPackage;
+        return ticketsPackage;
     }
 }

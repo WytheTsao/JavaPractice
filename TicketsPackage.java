@@ -1,13 +1,19 @@
-import java.util.ArrayList;
 
-public class TicketsPackage{
+public class TicketsPackage {
 
-    private ArrayList<Integer> ticketsPackage;
-    private String ticketsPackageName;
+    private String ticketsPackageName, ticketsPackageSession;
     private int ticketsPackageQuantity;
 
     public void setTicketsPackageName(String ticketsPackageName) {
         this.ticketsPackageName = ticketsPackageName;
+    }
+
+    public void setTicketsPackageSession(String ticketsPackageSession) {
+        this.ticketsPackageSession = ticketsPackageSession;
+    }
+
+    public String getTicketsPackageSession() {
+        return this.ticketsPackageSession;
     }
 
     public String getTicketsPackageName() {
